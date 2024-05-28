@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_04a39d302a964a101b8320cef91c4771 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_04a39d302a964a101b8320cef91c4771" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_04a39d302a964a101b8320cef91c4771 = L.map(
+                "map_04a39d302a964a101b8320cef91c4771",
+                {
+                    center: [52.0, 20.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_faed9c0d5802549ec584ba16b2e5d653 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_faed9c0d5802549ec584ba16b2e5d653.addTo(map_04a39d302a964a101b8320cef91c4771);
+        
+    
+            var marker_bab3ec8a779f2fded338419f4e2cf94c = L.marker(
+                [52.2275, 18.261389],
+                {}
+            ).addTo(map_04a39d302a964a101b8320cef91c4771);
+        
+    
+            var icon_de959bdf6e6dfa42133609a887c05d4e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_bab3ec8a779f2fded338419f4e2cf94c.setIcon(icon_de959bdf6e6dfa42133609a887c05d4e);
+        
+    
+        var popup_ddb18246004fcc12fef113610cfd47fb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b312218627538dee32fc57824e77f636 = $(`<div id="html_b312218627538dee32fc57824e77f636" style="width: 100.0%; height: 100.0%;">Staś,postów: 1, Konin</div>`)[0];
+                popup_ddb18246004fcc12fef113610cfd47fb.setContent(html_b312218627538dee32fc57824e77f636);
+            
+        
+
+        marker_bab3ec8a779f2fded338419f4e2cf94c.bindPopup(popup_ddb18246004fcc12fef113610cfd47fb)
+        ;
+
+        
+    
+    
+            var marker_30e58c200fa5832d4e73526c539b0d5b = L.marker(
+                [52.292778, 21.116111],
+                {}
+            ).addTo(map_04a39d302a964a101b8320cef91c4771);
+        
+    
+            var icon_99eac65f913faf42337c690ceb04afe2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_30e58c200fa5832d4e73526c539b0d5b.setIcon(icon_99eac65f913faf42337c690ceb04afe2);
+        
+    
+        var popup_54eca676e3259206bc28d86a922d0d55 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4cb04be95cfb00d0347e75e32a417012 = $(`<div id="html_4cb04be95cfb00d0347e75e32a417012" style="width: 100.0%; height: 100.0%;">Kacper,postów: 2, Ząbki</div>`)[0];
+                popup_54eca676e3259206bc28d86a922d0d55.setContent(html_4cb04be95cfb00d0347e75e32a417012);
+            
+        
+
+        marker_30e58c200fa5832d4e73526c539b0d5b.bindPopup(popup_54eca676e3259206bc28d86a922d0d55)
+        ;
+
+        
+    
+    
+            var marker_c01e484fd4863c29fe8e4174f4d67f37 = L.marker(
+                [53.259722, 19.395556],
+                {}
+            ).addTo(map_04a39d302a964a101b8320cef91c4771);
+        
+    
+            var icon_13b6989837367104ae1dd07e0ed7a61b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c01e484fd4863c29fe8e4174f4d67f37.setIcon(icon_13b6989837367104ae1dd07e0ed7a61b);
+        
+    
+        var popup_725254f0878e97c5d449a0537427d190 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_218e36ecae37f97c7bd944e43347f16e = $(`<div id="html_218e36ecae37f97c7bd944e43347f16e" style="width: 100.0%; height: 100.0%;">Michał,postów: 3, Brodnica</div>`)[0];
+                popup_725254f0878e97c5d449a0537427d190.setContent(html_218e36ecae37f97c7bd944e43347f16e);
+            
+        
+
+        marker_c01e484fd4863c29fe8e4174f4d67f37.bindPopup(popup_725254f0878e97c5d449a0537427d190)
+        ;
+
+        
+    
+    
+            var marker_d575972b7a0c448710bfa126c680a379 = L.marker(
+                [53.022222, 18.611111],
+                {}
+            ).addTo(map_04a39d302a964a101b8320cef91c4771);
+        
+    
+            var icon_5acea419d999bc35970e0696a82abb0b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d575972b7a0c448710bfa126c680a379.setIcon(icon_5acea419d999bc35970e0696a82abb0b);
+        
+    
+        var popup_8a65595a7cbd64ac25a6b19c11d4143b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bfae656db755f40672c97f2fe2b3a156 = $(`<div id="html_bfae656db755f40672c97f2fe2b3a156" style="width: 100.0%; height: 100.0%;">Tymon,postów: 2, Toruń</div>`)[0];
+                popup_8a65595a7cbd64ac25a6b19c11d4143b.setContent(html_bfae656db755f40672c97f2fe2b3a156);
+            
+        
+
+        marker_d575972b7a0c448710bfa126c680a379.bindPopup(popup_8a65595a7cbd64ac25a6b19c11d4143b)
+        ;
+
+        
+    
+    
+            var marker_f57c3229f513e1ded896318fc798faa2 = L.marker(
+                [51.25, 22.566667],
+                {}
+            ).addTo(map_04a39d302a964a101b8320cef91c4771);
+        
+    
+            var icon_e18f60075179896856cdeb8c02621b96 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f57c3229f513e1ded896318fc798faa2.setIcon(icon_e18f60075179896856cdeb8c02621b96);
+        
+    
+        var popup_ecd2fd4c1cce3cd16be30c38ef0b7b77 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_84338d156016c44b7a516a9b2b5709b9 = $(`<div id="html_84338d156016c44b7a516a9b2b5709b9" style="width: 100.0%; height: 100.0%;">Michał,postów: 2, Lublin</div>`)[0];
+                popup_ecd2fd4c1cce3cd16be30c38ef0b7b77.setContent(html_84338d156016c44b7a516a9b2b5709b9);
+            
+        
+
+        marker_f57c3229f513e1ded896318fc798faa2.bindPopup(popup_ecd2fd4c1cce3cd16be30c38ef0b7b77)
+        ;
+
+        
+    
+</script>
+</html>
