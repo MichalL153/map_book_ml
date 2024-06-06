@@ -1,82 +1,38 @@
-from tkinter import *
-
-def prosta_funkcja():
-    print("Prosta funkcja.")
-
-root=Tk()
-root.geometry('800x700')
-root.title('Map Book Sg')
-
-# ramki do porządkowania struktury
-ramka_lista_uzytkownikow=Frame(root)
-ramka_formularz=Frame(root)
-ramka_pokaz_szczegoly=Frame(root)
-# ramka_mapa=Frame(root)
-
-ramka_lista_uzytkownikow.grid(row=0, column=0,padx=50)
-ramka_formularz.grid(row=0, column=1)
-ramka_pokaz_szczegoly.grid(row=1, column=0,columnspan=2,padx=50,pady=20)
-# ramka_mapa.grid(row=2, column=0)
+import psycopg2
 
 
-# ramka lista obietkow
-label_lista_uzytkownikow=Label(ramka_lista_uzytkownikow,text="Lista uzytkownikow")
-listbox_lista_uzytkownikow=Listbox(ramka_lista_uzytkownikow,width=30)
-button_pokaz_szcegoly=Button(ramka_lista_uzytkownikow,text="Pokaz szczegoly")
-button_edytuj_uzytkownika=Button(ramka_lista_uzytkownikow,text="Edytuj")
-button_usun_uzytkownika=Button(ramka_lista_uzytkownikow,text="Usuń")
+db_params=psycopg2.connect(
+    database='postgres',
+    user='postgres',
+    password='postgres',
+    host='localhost',
+    port='5432'
+)
 
-label_lista_uzytkownikow.grid(row=0, column=0)
-listbox_lista_uzytkownikow.grid(row=1, column=0, columnspan=3)
-button_pokaz_szcegoly.grid(row=2, column=0)
-button_edytuj_uzytkownika.grid(row=2, column=1)
-button_usun_uzytkownika.grid(row=2, column=2)
+def add_user_to_table(db_params)->None:
+    imie = input('Imie: ')
+    nazwiska = input('Nazwiska: ')
+    post = input('Post: ')
+    miejscowosc = input('Miejscowosc: ')
 
-# ramka formularz
-label_formularz=Label(ramka_formularz,text="Formularz edycji i dodawania")
-label_imie=Label(ramka_formularz,text="Imię")
-label_nazwisko=Label(ramka_formularz,text="Nazwisko")
-label_postow=Label(ramka_formularz,text="Postów")
-label_miejscowosc=Label(ramka_formularz,text="Miejscowość")
-entry_imie=Entry(ramka_formularz)
-entry_nazwisko=Entry(ramka_formularz)
-entry_postow=Entry(ramka_formularz)
-entry_miejscowosc=Entry(ramka_formularz)
-button_dodaj_uzytkownika=Button(ramka_formularz,text="Dodaj")
+    sql_add_query=f"INSERT INTO public.users(name, surname, post, location, coords)VALUES ('{imie}', '{nazwiska}', '{post}', '{miejscowosc}', 'SRID=4326;POINT(21.0 52.23)');"
+    cursor=db_params.cursor()
+    cursor.execute(sql_add_query)
+    db_params.commit()
 
-label_formularz.grid(row=0, column=0, columnspan=2)
-label_imie.grid(row=1, column=0,sticky=W)
-label_nazwisko.grid(row=2, column=0,sticky=W)
-label_postow.grid(row=3, column=0,sticky=W)
-label_miejscowosc.grid(row=4, column=0,sticky=W)
-
-entry_imie.grid(row=1, column=1)
-entry_nazwisko.grid(row=2, column=1)
-entry_postow.grid(row=3, column=1)
-entry_miejscowosc.grid(row=4, column=1)
-button_dodaj_uzytkownika.grid(row=5, column=0, columnspan=2)
-
-# ramka_pokaz_szczegoly
-label_opis_uzytkownika=Label(ramka_pokaz_szczegoly,text="Szczegóły użytkownika")
-label_imie_szczegoly=Label(ramka_pokaz_szczegoly,text="Imię")
-label_imie_szczegoly_wartosc=Label(ramka_pokaz_szczegoly,text="...",width=10)
-label_nazwisko_szczegoly=Label(ramka_pokaz_szczegoly,text="Nazwisko")
-label_nazwisko_szczegoly_wartosc=Label(ramka_pokaz_szczegoly,text="...",width=10)
-label_postow_szczegoly=Label(ramka_pokaz_szczegoly,text="Postów")
-label_postow_szczegoly_wartosc=Label(ramka_pokaz_szczegoly,text="...",width=10)
-label_miejscowosc_szczegoly=Label(ramka_pokaz_szczegoly,text="Miejscowość")
-label_miejscowosc_szczegoly_wartosc=Label(ramka_pokaz_szczegoly,text="...",width=10)
-
-label_opis_uzytkownika.grid(row=0, column=0)
-label_imie_szczegoly.grid(row=1, column=0)
-label_imie_szczegoly_wartosc.grid(row=1, column=1,)
-label_nazwisko_szczegoly.grid(row=1, column=2)
-label_nazwisko_szczegoly_wartosc.grid(row=1, column=3)
-label_postow_szczegoly.grid(row=1, column=4)
-label_postow_szczegoly_wartosc.grid(row=1, column=5)
-label_miejscowosc_szczegoly.grid(row=1, column=6)
-label_miejscowosc_szczegoly_wartosc.grid(row=1, column=7)
+#
 
 
-label_opis_uzytkownika.grid(row=0, column=0)
-root.mainloop()
+
+def show_users(db_params)->None:
+
+
+    sql_add_query=f"SELECT * FROM public.users"
+    cursor=db_params.cursor()
+    cursor.execute(sql_add_query)
+    users=cursor.fetchall()
+    # print(users)
+    # db_params.commit()
+    for user in users:
+        print(user)
+show_users(db_params)
